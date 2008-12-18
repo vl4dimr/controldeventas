@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEBB3597-9F3F-4916-A7CE-1C3C737B8612}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Control_Inventario</RootNamespace>
+    <AssemblyName>Control Inventario</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Dibujoa.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=5.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Legacy Proyect\Legacy Proyect\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Articulo.cs" />
+    <Compile Include="datosReporte.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloCatalogo.Designer.cs">
+      <DependentUpon>moduloCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloCatalogoCrearArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloCatalogoCrearArticulo.Designer.cs">
+      <DependentUpon>moduloCatalogoCrearArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloCatalogoEliminarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloCatalogoEliminarArticulo.Designer.cs">
+      <DependentUpon>moduloCatalogoEliminarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloCatalogoModificarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloCatalogoModificarArticulo.Designer.cs">
+      <DependentUpon>moduloCatalogoModificarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloCompras.Designer.cs">
+      <DependentUpon>moduloCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloComprasBorrarProvedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloComprasBorrarProvedor.Designer.cs">
+      <DependentUpon>moduloComprasBorrarProvedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloComprasCrearProvedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloComprasCrearProvedor.Designer.cs">
+      <DependentUpon>moduloComprasCrearProvedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloEmpleados.Designer.cs">
+      <DependentUpon>moduloEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloFactura.Designer.cs">
+      <DependentUpon>moduloFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloLogin.Designer.cs">
+      <DependentUpon>moduloLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloReporteResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloReporteResultado.Designer.cs">
+      <DependentUpon>moduloReporteResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloReportes.Designer.cs">
+      <DependentUpon>moduloReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloReportes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloReportes2.Designer.cs">
+      <DependentUpon>moduloReportes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloVentas.Designer.cs">
+      <DependentUpon>ModuloVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="moduloVentasCompletarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="moduloVentasCompletarVenta.Designer.cs">
+      <DependentUpon>moduloVentasCompletarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mysql.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloCatalogo.resx">
+      <DependentUpon>moduloCatalogo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloCatalogoCrearArticulo.resx">
+      <DependentUpon>moduloCatalogoCrearArticulo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloCatalogoEliminarArticulo.resx">
+      <DependentUpon>moduloCatalogoEliminarArticulo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloCatalogoModificarArticulo.resx">
+      <DependentUpon>moduloCatalogoModificarArticulo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloCompras.resx">
+      <DependentUpon>moduloCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloComprasBorrarProvedor.resx">
+      <DependentUpon>moduloComprasBorrarProvedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloComprasCrearProvedor.resx">
+      <DependentUpon>moduloComprasCrearProvedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloEmpleados.resx">
+      <DependentUpon>moduloEmpleados.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloFactura.resx">
+      <DependentUpon>moduloFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloLogin.resx">
+      <DependentUpon>moduloLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloReporteResultado.resx">
+      <DependentUpon>moduloReporteResultado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloReportes.resx">
+      <DependentUpon>moduloReportes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloReportes2.resx">
+      <DependentUpon>moduloReportes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloVentas.resx">
+      <DependentUpon>ModuloVentas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="moduloVentasCompletarVenta.resx">
+      <DependentUpon>moduloVentasCompletarVenta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seleccionadorFecha.resx">
+      <DependentUpon>seleccionadorFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seleccionarArticulo.resx">
+      <DependentUpon>seleccionarArticulo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seleccionarArticuloCompra.resx">
+      <DependentUpon>seleccionarArticuloCompra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seleccionarArticuloVenta.resx">
+      <DependentUpon>seleccionarArticuloVenta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Provedor.cs" />
+    <Compile Include="registroEntradasSalidas.cs" />
+    <Compile Include="seleccionadorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seleccionadorFecha.Designer.cs">
+      <DependentUpon>seleccionadorFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seleccionarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seleccionarArticulo.Designer.cs">
+      <DependentUpon>seleccionarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seleccionarArticuloCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seleccionarArticuloCompra.Designer.cs">
+      <DependentUpon>seleccionarArticuloCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seleccionarArticuloVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seleccionarArticuloVenta.Designer.cs">
+      <DependentUpon>seleccionarArticuloVenta.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20071110114324-candado.gif" />
+    <None Include="Dibujoa.bmp" />
+    <Content Include="Dibujoa.ico" />
+    <Content Include="wi0064-64.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
