@@ -78,6 +78,8 @@ namespace Control_Inventario
 
             
             List<Provedor> listaProvedores = new List<Provedor>();
+
+            sql.open();
             listaProvedores = sql.getListaProvedores();
 
             foreach (Provedor provedor in listaProvedores)
@@ -93,6 +95,8 @@ namespace Control_Inventario
             {
                 comboUsuarios.Items.Add(usuario);
             }
+
+            sql.close();
 
         }
 
@@ -209,7 +213,7 @@ namespace Control_Inventario
 
                 cajaReporte.Text += "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
 
-                
+                sql.open();
                 List<datosReporte> datos = sql.rep_ventasPorArticulo(fecha1, fecha2);
 
                 if (datos != null)
@@ -241,6 +245,7 @@ namespace Control_Inventario
                 {
                     cajaReporte.Text = "No existen datos para este reporte.";
                 }
+                sql.close();
             }
             #endregion
 
@@ -267,7 +272,7 @@ namespace Control_Inventario
 
                 cajaReporte.Text += "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
 
-                
+                sql.open();
                 List<datosReporte> datos = sql.rep_ComprasPorProvedor(fecha1,fecha2,"Cliente");
 
                 if (datos != null)
@@ -298,6 +303,7 @@ namespace Control_Inventario
                 {
                     cajaReporte.Text = "No existen datos para este reporte.";
                 }
+                sql.close();
             }
             #endregion
 
@@ -324,7 +330,7 @@ namespace Control_Inventario
 
                 cajaReporte.Text += "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
 
-                
+                sql.open();
                 List<datosReporte> datos = sql.rep_ComprasPorProvedor(fecha1, fecha2, comboProvedor.SelectedItem.ToString());
 
                 if (datos != null)
@@ -355,6 +361,7 @@ namespace Control_Inventario
                 {
                     cajaReporte.Text = "No existen datos para este reporte.";
                 }
+                sql.close();
             }
             #endregion
 
@@ -363,7 +370,7 @@ namespace Control_Inventario
             {
                 cajaReporte.Text = "Tipo de Reporte: Existencias de Articulos." + Environment.NewLine + Environment.NewLine;
 
-                
+                sql.open();
                 List<datosReporte> datos = sql.rep_articulos();
 
                 if (datos != null)
@@ -395,6 +402,7 @@ namespace Control_Inventario
                 {
                     cajaReporte.Text = "No existen datos para este reporte.";
                 }
+                sql.close();
             }
             #endregion
 
@@ -421,7 +429,7 @@ namespace Control_Inventario
 
                 cajaReporte.Text += "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
 
-                
+                sql.open();
                 List<datosReporte> datos = sql.rep_ComprasPorProvedorGenerales(fecha1, fecha2);
 
                 if (datos != null)
@@ -452,6 +460,7 @@ namespace Control_Inventario
                 {
                     cajaReporte.Text = "No existen datos para este reporte.";
                 }
+                sql.close();
             }
             #endregion
 
@@ -478,9 +487,9 @@ namespace Control_Inventario
 
                 cajaReporte.Text += "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
 
-                
 
-                // CREAR TODO EL SISTEMA
+
+                sql.open();
                 List<registroEntradasSalidas> datos = sql.rep_entradasysalidas(fecha1, fecha2, comboUsuarios.SelectedItem.ToString());
 
                 if (datos != null)
@@ -508,6 +517,7 @@ namespace Control_Inventario
             reiniciarReporte();
             copyClipBoard.Focus();
             ejecutarReporte.Visible = false;
+            sql.close();
             
         }
 

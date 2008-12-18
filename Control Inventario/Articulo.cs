@@ -22,6 +22,7 @@ namespace Control_Inventario
         {
             try
             {
+                sql.open();
                 MySqlDataReader sqlRead = sql.query("SELECT * FROM articulos WHERE id = " + idArticulo.ToString());
                 if (sqlRead.HasRows)
                 {
@@ -36,6 +37,7 @@ namespace Control_Inventario
 
                     sqlRead.Close();
                 }
+                sql.close();
             }
             catch
             {

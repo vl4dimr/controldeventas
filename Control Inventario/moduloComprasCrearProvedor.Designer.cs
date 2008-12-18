@@ -144,6 +144,7 @@
             this.Name = "moduloComprasCrearProvedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Proveedor";
+            this.Load += new System.EventHandler(this.moduloComprasCrearProvedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

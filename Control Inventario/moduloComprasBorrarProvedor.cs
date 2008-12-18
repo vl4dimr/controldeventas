@@ -11,6 +11,8 @@ namespace Control_Inventario
 {
     public partial class moduloComprasBorrarProvedor : Form
     {
+        mysql sql = new mysql();
+
         public moduloComprasBorrarProvedor()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Control_Inventario
         private void moduloComprasBorrarProvedor_Load(object sender, EventArgs e)
         {
             comboProvedores.Items.Clear();
-            mysql sql = new mysql();
+            sql.open();
             List<Provedor> listaProvedores = new List<Provedor>();
             listaProvedores = sql.getListaProvedores();
 
@@ -42,13 +44,15 @@ namespace Control_Inventario
                     comboProvedores.Items.Add(provedor.nombre);
                 }
             }
+            sql.close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            mysql sql = new mysql();
+            sql.open();
             sql.eliminarProvedor(comboProvedores.SelectedItem.ToString());
             MessageBox.Show("El provedor " + comboProvedores.SelectedItem.ToString() + " fue eliminado con exito!");
+            sql.close();
             this.Close();
         }
 

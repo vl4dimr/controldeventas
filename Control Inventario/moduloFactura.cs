@@ -11,6 +11,8 @@ namespace Control_Inventario
 {
     public partial class moduloFactura : Form
     {
+        mysql sql = new mysql();
+
         public double importe;
 
         public moduloFactura()
@@ -32,7 +34,7 @@ namespace Control_Inventario
 
         private void ejecutarFactura_Click(object sender, EventArgs e)
         {
-            mysql sql = new mysql();
+            sql.open();
 
             string dia = "";
             string mes = "";
@@ -46,6 +48,7 @@ namespace Control_Inventario
             string fechaFormato = ano + "-" + mes + "-" + dia;
 
             sql.crearFactura(cajaNombre.Text, double.Parse(cajaImporte.Text), fechaFormato);
+            sql.close();
             this.Close();
         }
 

@@ -22,6 +22,8 @@ namespace Control_Inventario
 
         private void tBusqueda_KeyDown(object sender, KeyEventArgs e)
         {
+            sql.open();
+
             List<Articulo> Articulos = new List<Articulo>();
 
             if (e.KeyValue == 13)
@@ -48,7 +50,8 @@ namespace Control_Inventario
             {
                 this.Close();
             }
-                
+
+            sql.close();                
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

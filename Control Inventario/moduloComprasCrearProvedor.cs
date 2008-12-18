@@ -12,6 +12,7 @@ namespace Control_Inventario
     public partial class moduloComprasCrearProvedor : Form
     {
         public moduloCompras compras;
+        mysql sql = new mysql();
 
         public moduloComprasCrearProvedor()
         {
@@ -34,10 +35,11 @@ namespace Control_Inventario
         {
             if (cajaNombre.Text != "")
             {
-                mysql sql = new mysql();
+                sql.open();
                 sql.crearNuevoProvedor(cajaNombre.Text, cajaDireccion.Text, cajaTelefono.Text, cajaRFC.Text);
                 MessageBox.Show("Proveedor Creado Con Exito!");
                 compras.actualizarCombo();
+                sql.close();
                 this.Close();
             }
         }
@@ -55,6 +57,11 @@ namespace Control_Inventario
             cajaRFC.ResetText();
             cajaTelefono.ResetText();
             cajaNombre.Focus();
+        }
+
+        private void moduloComprasCrearProvedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

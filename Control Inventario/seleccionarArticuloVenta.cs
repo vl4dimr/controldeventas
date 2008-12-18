@@ -51,6 +51,7 @@ namespace Control_Inventario
         {
             if (e.KeyValue == 13)
             {
+                sql.open();
                 string nombreArticulo = dataGrid.CurrentRow.Cells[1].Value.ToString();
                 int cantidadVenta = int.Parse(dataGrid.CurrentRow.Cells[0].Value.ToString());
                 Articulo articulo = sql.getArticulo(nombreArticulo);
@@ -62,10 +63,12 @@ namespace Control_Inventario
                     {
                         sql.agregarPreventa(nombreArticulo, cantidadVenta);
                         ventas.actualizarTabla();
+                        sql.close();
                         this.Close();
                     }
                     else
                     {
+                        sql.close();
                         this.Close();
                     }
                 }
@@ -73,8 +76,9 @@ namespace Control_Inventario
                 {
                     sql.agregarPreventa(nombreArticulo, cantidadVenta);
                     ventas.actualizarTabla();
+                    sql.close();
                     this.Close();
-                }                
+                }
             }
 
             if (e.KeyValue == 27)

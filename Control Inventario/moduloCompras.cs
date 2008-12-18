@@ -11,6 +11,8 @@ namespace Control_Inventario
 {
     public partial class moduloCompras : Form
     {
+        mysql sql = new mysql();
+
         public moduloCompras()
         {
             InitializeComponent();
@@ -32,11 +34,12 @@ namespace Control_Inventario
         {
             if (e.KeyValue == 13)
             {
-                mysql sql = new mysql();
+                sql.open();
                 List<Articulo> articulos = new List<Articulo>();
                 articulos = sql.buscarArticulo(cajaBusqueda.Text);
                 seleccionarArticuloCompra compra = new seleccionarArticuloCompra(articulos);
                 compra.compras = this;
+                sql.close();
                 compra.ShowDialog();
             }
         }
@@ -57,7 +60,7 @@ namespace Control_Inventario
         public void actualizarCombo()
         {
             comboProvedores.Items.Clear();
-            mysql sql = new mysql();
+            sql.open();
             List<Provedor> listaProvedores = new List<Provedor>();
             listaProvedores = sql.getListaProvedores();
 
@@ -65,6 +68,7 @@ namespace Control_Inventario
             {
                 comboProvedores.Items.Add(provedor.nombre);
             }
+            sql.close();
         }
         
         private void comboProvedores_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,7 +80,7 @@ namespace Control_Inventario
 
         private void botonComprar_Click(object sender, EventArgs e)
         {
-            mysql sql = new mysql();
+            sql.open();
             Provedor provedor = sql.getProvedor(comboProvedores.SelectedItem.ToString());
             Articulo articulo = sql.getArticulo(cajaArticuloAComprar.Text);
             int cantidad = int.Parse(cajaCantidad.Text);
@@ -87,6 +91,7 @@ namespace Control_Inventario
             cajaArticuloAComprar.Clear();
             cajaCantidad.Clear();
             cajaBusqueda.Focus();
+            sql.close();
         }
          
     

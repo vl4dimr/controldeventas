@@ -34,6 +34,8 @@ namespace Control_Inventario
                 moduloLogin moduloSeguridad = new moduloLogin();
                 moduloSeguridad.frm = this;
                 moduloSeguridad.ShowDialog();
+
+                sql.open();
                 this.Text = "Comercializadora y Distribuidora \"El Sol\" S.A. de C.V. - " + sql.getNombreUsuario(ID);
 
                 desabilitarTodosBotones();
@@ -56,6 +58,7 @@ namespace Control_Inventario
                     botonCerrarSesion.Enabled = true;
                 }
 
+                sql.close();
                 this.Show();
             }
             catch (Exception ex)
@@ -143,6 +146,7 @@ namespace Control_Inventario
             {
                 try
                 {
+                    sql.open();
                     sql.CheckOut(ID);
                     this.Hide();
 
@@ -170,6 +174,7 @@ namespace Control_Inventario
                         botonCerrarSesion.Enabled = true;
                     }
 
+                    sql.close();
                     this.Show();
                 }
                 catch (Exception ex)

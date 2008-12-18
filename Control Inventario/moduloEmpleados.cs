@@ -34,6 +34,8 @@ namespace Control_Inventario
 
         private void button2_Click(object sender, EventArgs e)
         {
+            sql.open();
+
             if (cajaUsuario.Text != "" && cajaNombre.Text != "")
                 if (cajaContrasena.Text == cajaContrasena2.Text && cajaContrasena.Text != "")
                 {
@@ -55,6 +57,8 @@ namespace Control_Inventario
                 {
                     MessageBox.Show("Las contraseñas no son iguales");
                 }
+
+            sql.close();
 
         }
 

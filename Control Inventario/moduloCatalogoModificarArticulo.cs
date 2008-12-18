@@ -33,6 +33,7 @@ namespace Control_Inventario
 
         private void moduloCatalogoModificarArticulo_Load(object sender, EventArgs e)
         {
+            sql.open();
             List<string> listaArticulos = new List<string>();
             listaArticulos = sql.llenarListaArticulos();
             foreach(string nom in listaArticulos)
@@ -40,24 +41,29 @@ namespace Control_Inventario
                 cArticulos.Items.Add(nom);
             }
             cArticulos.Sorted = true;
+            sql.close();
         }
 
         private void cArticulos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            sql.open();
             Articulo articulo;
             articulo = sql.getArticulo(cArticulos.SelectedItem.ToString());
             tNombre.Text = articulo.nombre;
             tPrecio.Text = articulo.precio.ToString();
             tDescripcion.Text = articulo.descripcion;
             ID = articulo.id;
+            sql.close();
         }
 
         private void bCrearArticulo_Click(object sender, EventArgs e)
         {
             if (tNombre.Text != "")
             {
+                sql.open();
                 sql.actualizarArticulo(tNombre.Text, float.Parse(tPrecio.Text), tDescripcion.Text, ID);
                 MessageBox.Show("Articulo modificado con exito!");
+                sql.close();
                 this.Close();
             }
         }

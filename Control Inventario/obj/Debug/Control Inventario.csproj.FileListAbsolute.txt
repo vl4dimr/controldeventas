@@ -97,3 +97,28 @@ C:\Documents and Settings\fz2sht\Desktop\Control Inventario\Control Inventario\o
 C:\Documents and Settings\fz2sht\Desktop\Control Inventario\Control Inventario\obj\Debug\Control_Inventario.moduloReportes2.resources
 C:\Documents and Settings\fz2sht\Desktop\Control Inventario\Control Inventario\obj\Debug\Control_Inventario.seleccionadorFecha.resources
 C:\Documents and Settings\fz2sht\Desktop\Control Inventario\Control Inventario\obj\Debug\Control_Inventario.moduloFactura.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control Inventario.exe
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control Inventario.pdb
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\bin\Debug\Control Inventario.exe
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\bin\Debug\Control Inventario.pdb
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.Form1.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogo.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogoCrearArticulo.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogoEliminarArticulo.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogoModificarArticulo.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCompras.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloComprasBorrarProvedor.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloComprasCrearProvedor.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloEmpleados.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloFactura.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloLogin.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloReportes2.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.ModuloVentas.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloVentasCompletarVenta.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.Properties.Resources.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionadorFecha.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticulo.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticuloCompra.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticuloVenta.resources
+C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control Inventario.csproj.GenerateResource.Cache
