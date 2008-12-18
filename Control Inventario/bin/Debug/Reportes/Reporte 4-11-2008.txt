@@ -1,3 +1,0 @@
-Cliente -> iPhone(1)
-Cliente -> Pua 1.5mm(5)
-Cliente -> Laptop Vaio(1)
