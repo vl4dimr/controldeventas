@@ -49,7 +49,7 @@ namespace Control_Inventario
         {
             try
             {
-                mysql sql = new mysql();
+                sql.open();
                 Articulo articulo = sql.getArticulo(dataGridView1.CurrentRow.Cells[1].Value.ToString());
                 int cantidad = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 Provedor provedor = sql.getProvedor("Cliente");
@@ -62,7 +62,8 @@ namespace Control_Inventario
                     sql.cancelarVenta();
                     actualizarTabla();
                     cajaBusqueda.Focus();
-                }                
+                }
+                sql.close();
             }
             catch (Exception ex)
             {
@@ -79,6 +80,7 @@ namespace Control_Inventario
 
             if (e.KeyValue == 13) // Enter
             {
+                sql.open();
                 Articulos = sql.buscarArticulo(cajaBusqueda.Text);
 
                 if (Articulos != null)
@@ -95,6 +97,7 @@ namespace Control_Inventario
 
                 cajaBusqueda.Clear();
                 cajaBusqueda.Focus();
+                sql.close();
             }
 
             if (e.KeyValue == 27) // Esc
@@ -107,7 +110,9 @@ namespace Control_Inventario
                 string confirmar = MessageBox.Show("Deseas cancelar la venta?", "Cancelar Venta", MessageBoxButtons.YesNo,MessageBoxIcon.Question).ToString();
                 if (confirmar == "Yes")
                 {
+                    sql.open();
                     sql.cancelarVenta();
+                    sql.close();
                     actualizarTabla();
                     cajaBusqueda.Focus();
                 }
@@ -115,6 +120,7 @@ namespace Control_Inventario
 
             if (e.KeyValue == 45) // Insert
             {
+                sql.open();
                 if (sql.existenArticulosPreventa())
                 {
                     moduloVentasCompletarVenta completarVenta = new moduloVentasCompletarVenta();
@@ -122,6 +128,7 @@ namespace Control_Inventario
                     completarVenta.modVenta = this;
                     completarVenta.ShowDialog();
                 }
+                sql.close();
             }
         }
 

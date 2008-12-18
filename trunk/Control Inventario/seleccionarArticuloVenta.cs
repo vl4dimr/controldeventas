@@ -37,7 +37,7 @@ namespace Control_Inventario
                 DataRow dataRow = dataTable1.NewRow();
                 dataRow["Cant"] = articulo.cantidadVenta.ToString();
                 dataRow["Nombre"] = articulo.nombre;
-                dataRow["Precio"] = "$" + articulo.precio;
+                dataRow["Precio"] = string.Format("{0:C}", articulo.precio);
                 dataRow["Existencias"] = articulo.existencia.ToString();
                 dataRow["Descripcion"] = articulo.descripcion;
                 dataTable1.Rows.Add(dataRow);
