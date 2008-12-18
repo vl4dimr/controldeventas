@@ -1,5 +1,0 @@
-Brocha(4)
-Serrucho Profesional(2)
-Martillo de Bola(2)
-
-La cantidad total de Articulos vendidos fue: 8

@@ -1,5 +1,0 @@
-Pua 2.5mm(4)
-Pluma(1)
-Impresora(1)
-
-La cantidad total de Articulos vendidos fue: 6
