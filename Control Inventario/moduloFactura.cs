@@ -15,6 +15,18 @@ namespace Control_Inventario
 
         public double importe;
 
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    break;
+            }
+
+            return base.ProcessDialogKey(keyData);
+        }
+
         public moduloFactura()
         {
             InitializeComponent();
