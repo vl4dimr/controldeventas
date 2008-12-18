@@ -121,18 +121,6 @@
     <Compile Include="moduloLogin.Designer.cs">
       <DependentUpon>moduloLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="moduloReporteResultado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="moduloReporteResultado.Designer.cs">
-      <DependentUpon>moduloReporteResultado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="moduloReportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="moduloReportes.Designer.cs">
-      <DependentUpon>moduloReportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="moduloReportes2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,14 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="moduloLogin.resx">
       <DependentUpon>moduloLogin.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="moduloReporteResultado.resx">
-      <DependentUpon>moduloReporteResultado.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="moduloReportes.resx">
-      <DependentUpon>moduloReportes.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="moduloReportes2.resx">

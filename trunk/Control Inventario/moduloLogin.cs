@@ -41,11 +41,13 @@ namespace Control_Inventario
             try
             {
                 mysql sql = new mysql();
+                sql.open();
                 int id = sql.validarUsuario(cajaUsuario.Text, cajaContrasena.Text);
 
                 if (id != 0)
                 {
                     frm.ID = id;
+                    sql.close();
                     this.Close();
                 }
                 else

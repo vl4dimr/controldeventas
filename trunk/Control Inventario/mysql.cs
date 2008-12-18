@@ -22,15 +22,55 @@ namespace Control_Inventario
             string user = "root";
             string password = "";
 
-            string strProvider = "Data Source=" + host + ";Database=" + database + ";User ID=" + user + ";Password=" + password;
+            string strProvider = "Data Source=" + host + ";Database=" + database + ";User ID=" + user + ";Password=" + password + ";pooling=false;";
             sqlCon = new MySqlConnection(strProvider);
+        }
+
+        public void open()
+        {
             try
             {
-                sqlCon.Open();
+                if (sqlCon != null)
+                {
+                    if (sqlCon.State == System.Data.ConnectionState.Closed)
+                        sqlCon.Open();
+                    //MessageBox.Show("Open -> sqlCon");
+                }
+
+                if (sqlCon2 != null)
+                {
+                    if (sqlCon2.State == System.Data.ConnectionState.Closed)
+                        sqlCon2.Open();
+                    //MessageBox.Show("Open -> sqlCon2");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en el servidor SQL, favor de verificar conexion.\r\rError MySQL:\r" + ex.Message);
+                MessageBox.Show("Error MySql -> " + ex.Message);
+            }
+        }
+
+        public void close()
+        {
+            try
+            {
+                if (sqlCon != null)
+                {
+                    sqlCon.Close();
+                    sqlCon.Dispose();
+                    //MessageBox.Show("Kill -> sqlCon");
+                }
+
+                if (sqlCon2 != null)
+                {
+                    sqlCon2.Close();
+                    sqlCon2.Dispose();
+                    //MessageBox.Show("Kill -> sqlCon2");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -59,7 +99,7 @@ namespace Control_Inventario
             sqlCon2 = new MySqlConnection(strProvider);
             try
             {
-                sqlCon2.Open();
+                this.open();
             }
             catch (Exception ex)
             {
@@ -81,7 +121,7 @@ namespace Control_Inventario
                 MessageBox.Show(ex.Message);                
                 return null;
             }
-        }
+        }        
 
         public int validarUsuario(string user, string pass)
         {
@@ -94,7 +134,9 @@ namespace Control_Inventario
                 return id;
             }
             else
+            {
                 return 0;
+            }
         }
 
         public string getNombreUsuario(int id)
@@ -105,6 +147,7 @@ namespace Control_Inventario
                 sqlRead.Read();
                 string nombre = sqlRead.GetString(0);
                 sqlRead.Close();
+                
                 return nombre;
             }
             else
@@ -122,6 +165,7 @@ namespace Control_Inventario
                 sqlRead.Read();
                 int id = sqlRead.GetUInt16(0);
                 sqlRead.Close();
+                
                 return id;
             }
             else
@@ -278,6 +322,7 @@ namespace Control_Inventario
 
         public List<Articulo> buscarArticulo(string busqueda)
         {
+            
             List<Articulo> Articulos = new List<Articulo>();
             string[] busquedaSplit;
 
@@ -304,10 +349,12 @@ namespace Control_Inventario
                     }
 
                     sqlRead.Close();
+                    
                     return Articulos;
                 }
                 else
                 {
+                    
                     sqlRead.Close();
                     return null;
                 }
@@ -331,10 +378,12 @@ namespace Control_Inventario
                     }
 
                     sqlRead.Close();
+                    
                     return Articulos;
                 }
                 else
                 {
+                    
                     sqlRead.Close();
                     return null;
                 }
@@ -343,7 +392,7 @@ namespace Control_Inventario
 
         public List<Articulo> getArticulosPreventa()
         {
-
+            
         List<Articulo> Articulos = new List<Articulo>();
 
             MySqlDataReader sqlRead = this.query("SELECT * FROM preventa");
@@ -358,10 +407,12 @@ namespace Control_Inventario
                 }
 
                 sqlRead.Close();
+                
                 return Articulos;
             }
             else
             {
+                
                 sqlRead.Close();
                 return null;
             }            

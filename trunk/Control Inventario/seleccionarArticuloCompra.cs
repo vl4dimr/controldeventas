@@ -45,9 +45,11 @@ namespace Control_Inventario
         {
             if (e.KeyValue == 13)
             {
+                sql.open();
                 string nombreArticulo = dataGrid.CurrentRow.Cells[0].Value.ToString();
                 Articulo articulo = sql.getArticulo(nombreArticulo);
                 compras.setArticulo(articulo.nombre);
+                sql.close();
                 this.Close();
 
             }

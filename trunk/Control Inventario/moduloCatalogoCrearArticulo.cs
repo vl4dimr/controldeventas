@@ -22,14 +22,18 @@ namespace Control_Inventario
 
         private void bCrearArticulo_Click(object sender, EventArgs e)
         {
-            //Crear regulaciones
-            sql.crearNuevoArticulo(tNombre.Text, float.Parse(tPrecio.Text), tDescripcion.Text, tExistencia.Text);
-            MessageBox.Show("Articulo creado con exito!");
-            tNombre.Clear();
-            tExistencia.Clear();
-            tPrecio.Clear();
-            tDescripcion.Clear();
-            this.Close();
+            if (tNombre.Text != "")
+            {
+                sql.open();
+                sql.crearNuevoArticulo(tNombre.Text, float.Parse(tPrecio.Text), tDescripcion.Text, tExistencia.Text);
+                MessageBox.Show("Articulo creado con exito!");
+                tNombre.Clear();
+                tExistencia.Clear();
+                tPrecio.Clear();
+                tDescripcion.Clear();
+                sql.close();
+                this.Close();
+            }
         }
 
         private void tNombre_KeyDown(object sender, KeyEventArgs e)

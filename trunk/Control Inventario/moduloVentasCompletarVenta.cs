@@ -54,8 +54,10 @@ namespace Control_Inventario
                     this.Text = "ESC Para Regresar....";
 
                     List<Articulo> articulosVendidos = new List<Articulo>();
+                    sql.open();
                     articulosVendidos = sql.completarVenta();
                     sql.registrarGanancia(precioPagar);
+                    sql.close();
 
 #if SISTEMA_FACTURAS_
                     string deseaFactura = MessageBox.Show("Deseas Facturar esta venta?", "Factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question).ToString();
@@ -124,6 +126,7 @@ namespace Control_Inventario
                 botonCancelar.Text = "Salir";
 
                 List<Articulo> articulosVendidos = new List<Articulo>();
+                sql.open();
                 articulosVendidos = sql.completarVenta();
                 sql.registrarGanancia(precioPagar);
 
@@ -136,6 +139,7 @@ namespace Control_Inventario
                 cajaTicket.Text += "Cambio: $" + (float.Parse(cajaCantidadRecibida.Text) - precioPagar).ToString();
                 cajaTicket.Text += Environment.NewLine + Environment.NewLine + "Muchas Gracias por su compra!!";
                 botonCancelar.Focus();
+                sql.close();
             }
         }
     }

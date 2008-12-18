@@ -9,8 +9,6 @@ namespace Control_Inventario
 {
     class datosReporte
     {
-        private mysql sql = new mysql();
-
         public string idArticulo { get; set; }
         public string nombreArticulo { get; set; }
         public string cantidad { get; set; }

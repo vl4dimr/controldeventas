@@ -32,6 +32,7 @@ namespace Control_Inventario
 
         private void moduloCatalogoEliminarArticulo_Load(object sender, EventArgs e)
         {
+            sql.open();
             List<string> listaArticulos = new List<string>();
             listaArticulos = sql.llenarListaArticulos();
 
@@ -39,14 +40,16 @@ namespace Control_Inventario
             {
                 cArticulos.Items.Add(nom);
             }
-
+            sql.close();
         }
 
         private void bCrearArticulo_Click(object sender, EventArgs e)
-        {            
+        {
+            sql.open();
             Articulo articulo = sql.getArticulo(cArticulos.SelectedItem.ToString());
             sql.eliminarArticulo(articulo.id);
             MessageBox.Show("Articulo Eliminado con Exito!");
+            sql.close();
             this.Close();
         }
 

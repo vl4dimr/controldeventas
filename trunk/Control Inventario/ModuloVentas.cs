@@ -141,15 +141,18 @@ namespace Control_Inventario
 
         private void botonRefresh_Click(object sender, EventArgs e)
         {
+            sql.open();
             sql.cancelarVenta();
             actualizarTabla();
             cajaBusqueda.Focus();
+            sql.close();
         }
 
         public void actualizarTabla()
         {
             precio = 0;
             List<Articulo> Articulos;
+            sql.open();
             Articulos = sql.getArticulosPreventa();
 
             DataTable dataTable1 = new DataTable("Articulos");
@@ -174,6 +177,7 @@ namespace Control_Inventario
             if (precio == 0) cajaPrecio.Text = "$0.00";
             else cajaPrecio.Text = string.Format("{0:C}",precio);
             dataGridView1.DataSource = dataTable1;
+            sql.close();
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
@@ -182,10 +186,12 @@ namespace Control_Inventario
             {
                 try
                 {
+                    sql.open();
                     string nombreArticulo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     int cantidadVenta = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                     Articulo articulo = sql.getArticulo(nombreArticulo);
                     sql.eliminarArticuloPreventa(articulo.id, cantidadVenta);
+                    sql.close();
                     actualizarTabla();
                 }
                 catch (Exception ex)
@@ -209,6 +215,7 @@ namespace Control_Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
+            sql.open();
             if (sql.existenArticulosPreventa())
             {
                 moduloVentasCompletarVenta completarVenta = new moduloVentasCompletarVenta();
@@ -216,6 +223,7 @@ namespace Control_Inventario
                 completarVenta.modVenta = this;
                 completarVenta.ShowDialog();
             }
+            sql.close();
         }
     }
 }
