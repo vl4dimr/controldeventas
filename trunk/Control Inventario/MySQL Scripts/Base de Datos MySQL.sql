@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-12-2008 a las 17:47:24
+-- Tiempo de generación: 19-12-2008 a las 10:39:06
 -- Versión del servidor: 5.0.51
 -- Versión de PHP: 5.2.6
 
@@ -39,14 +39,13 @@ CREATE TABLE IF NOT EXISTS `articulos` (
 --
 
 INSERT INTO `articulos` (`id`, `nombre`, `precio`, `descripcion`, `existencia`) VALUES
-(1, 'Jabon de Mano', 13.5, 'Jabon para manos.', '98'),
+(1, 'Jabon de Mano', 13.5, 'Jabon para manos.', '97'),
 (3, 'Pua 1.5mm', 10, 'Pua de guitarra de 1.5mm', '11'),
-(4, 'Pua 2.5mm', 10, 'Pua de Guitarra de 2.5mm', '11'),
-(5, 'Pua .5mm', 10, 'Pua de guitarra de .5mm', '10'),
+(4, 'Pua 2.5mm', 10, 'Pua de Guitarra de 2.5mm', '10'),
 (6, 'Laptop Vaio', 17500, 'Laptop Vaio VGN-FW170J', '0'),
-(12, 'Monitor Plasma 22"', 22000, 'Es un monitor de plasma de 22 Pulgadas muy bonito.', '4'),
+(12, 'Monitor 22"', 22000, 'Es un monitor de plasma de 22 Pulgadas muy bonito.', '4'),
 (8, 'iPhone', 3000, 'iPhone 1G, 8Gb', '19'),
-(11, 'Pluma', 5.5, 'Pluma azul', '64');
+(11, 'Pluma', 5.5, 'Pluma azul', '62');
 
 -- --------------------------------------------------------
 
@@ -61,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `asistencia` (
   `hora` time NOT NULL,
   `tipo` int(1) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=111 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=158 ;
 
 --
 -- Volcar la base de datos para la tabla `asistencia`
@@ -177,7 +176,54 @@ INSERT INTO `asistencia` (`id`, `idUsuario`, `fecha`, `hora`, `tipo`) VALUES
 (107, 1, '2008-12-17', '17:41:39', 1),
 (108, 1, '2008-12-17', '17:42:43', 1),
 (109, 1, '2008-12-17', '17:45:08', 1),
-(110, 1, '2008-12-17', '17:46:38', 1);
+(110, 1, '2008-12-17', '17:46:38', 1),
+(111, 1, '2008-12-17', '17:49:33', 1),
+(112, 1, '2008-12-17', '17:51:11', 1),
+(113, 1, '2008-12-18', '09:43:11', 1),
+(114, 1, '2008-12-18', '09:43:44', 1),
+(115, 1, '2008-12-18', '09:44:51', 1),
+(116, 1, '2008-12-18', '09:49:05', 1),
+(117, 1, '2008-12-18', '09:53:13', 1),
+(118, 0, '2008-12-18', '09:58:22', 1),
+(119, 1, '2008-12-18', '10:06:28', 1),
+(120, 1, '2008-12-18', '10:06:32', 2),
+(121, 1, '2008-12-18', '10:06:58', 1),
+(122, 1, '2008-12-18', '10:11:41', 1),
+(123, 1, '2008-12-18', '10:14:11', 1),
+(124, 1, '2008-12-18', '10:16:18', 1),
+(125, 1, '2008-12-18', '10:16:33', 1),
+(126, 1, '2008-12-18', '10:16:35', 2),
+(127, 1, '2008-12-18', '10:16:36', 1),
+(128, 1, '2008-12-18', '10:17:28', 1),
+(129, 1, '2008-12-18', '10:18:55', 1),
+(130, 1, '2008-12-18', '10:20:50', 1),
+(131, 1, '2008-12-18', '10:29:40', 1),
+(132, 1, '2008-12-18', '10:34:17', 1),
+(133, 1, '2008-12-18', '10:34:52', 1),
+(134, 1, '2008-12-18', '10:36:12', 1),
+(135, 1, '2008-12-18', '10:37:57', 1),
+(136, 1, '2008-12-18', '10:39:17', 1),
+(137, 1, '2008-12-18', '10:42:26', 1),
+(138, 0, '2008-12-18', '10:46:07', 1),
+(139, 0, '2008-12-18', '10:46:41', 1),
+(140, 0, '2008-12-18', '10:47:04', 1),
+(141, 0, '2008-12-18', '10:48:07', 1),
+(142, 1, '2008-12-18', '10:48:27', 2),
+(143, 1, '2008-12-18', '10:50:03', 1),
+(144, 1, '2008-12-18', '10:51:18', 1),
+(145, 0, '2008-12-18', '10:59:02', 1),
+(146, 0, '2008-12-18', '10:59:42', 1),
+(147, 1, '2008-12-18', '11:09:00', 1),
+(148, 1, '2008-12-18', '11:09:34', 2),
+(149, 1, '2008-12-18', '11:09:35', 1),
+(150, 1, '2008-12-18', '11:39:17', 1),
+(151, 1, '2008-12-18', '11:41:44', 1),
+(152, 1, '2008-12-18', '11:44:20', 1),
+(153, 1, '2008-12-18', '11:44:53', 2),
+(154, 1, '2008-12-18', '11:44:54', 1),
+(155, 1, '2008-12-18', '11:46:20', 1),
+(156, 1, '2008-12-18', '11:46:48', 2),
+(157, 1, '2008-12-18', '11:46:49', 1);
 
 -- --------------------------------------------------------
 
@@ -266,7 +312,7 @@ CREATE TABLE IF NOT EXISTS `ganancias` (
   `monto` float(10,2) NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Volcar la base de datos para la tabla `ganancias`
@@ -302,7 +348,9 @@ INSERT INTO `ganancias` (`id`, `monto`, `fecha`) VALUES
 (38, 22000.00, '2008-12-16'),
 (39, 22000.00, '2008-12-16'),
 (40, 13.50, '2008-12-17'),
-(41, 87500.00, '2008-12-17');
+(41, 87500.00, '2008-12-17'),
+(42, 15.50, '2008-12-18'),
+(43, 19.00, '2008-12-18');
 
 -- --------------------------------------------------------
 
@@ -315,14 +363,12 @@ CREATE TABLE IF NOT EXISTS `preventa` (
   `idArticulo` int(4) NOT NULL,
   `cantidad` int(4) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcar la base de datos para la tabla `preventa`
 --
 
-INSERT INTO `preventa` (`id`, `idArticulo`, `cantidad`) VALUES
-(1, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -386,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `ventas` (
   `cantidad` int(5) NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
 
 --
 -- Volcar la base de datos para la tabla `ventas`
@@ -420,4 +466,8 @@ INSERT INTO `ventas` (`id`, `idArticulo`, `cantidad`, `fecha`) VALUES
 (50, 12, 1, '2008-12-16'),
 (51, 12, 1, '2008-12-16'),
 (52, 1, 1, '2008-12-17'),
-(53, 6, 5, '2008-12-17');
+(53, 6, 5, '2008-12-17'),
+(54, 4, 1, '2008-12-18'),
+(55, 11, 1, '2008-12-18'),
+(56, 1, 1, '2008-12-18'),
+(57, 11, 1, '2008-12-18');
