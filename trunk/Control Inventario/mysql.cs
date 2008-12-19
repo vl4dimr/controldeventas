@@ -34,7 +34,7 @@ namespace Control_Inventario
                 {
                     if (sqlCon.State == System.Data.ConnectionState.Closed)
                         sqlCon.Open();
-                    //MessageBox.Show("Open -> sqlCon");
+                    //MessageBox.Show("Open -> sqlCon");xxxxxxxxxxxxxxxxxxx
                 }
 
                 if (sqlCon2 != null)

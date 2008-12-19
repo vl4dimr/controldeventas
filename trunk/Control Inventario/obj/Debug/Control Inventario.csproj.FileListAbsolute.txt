@@ -122,3 +122,28 @@ C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario
 C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticuloCompra.resources
 C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticuloVenta.resources
 C:\Documents and Settings\fz2sht\My Documents\controldeventas\Control Inventario\obj\Debug\Control Inventario.csproj.GenerateResource.Cache
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control Inventario.exe
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control Inventario.pdb
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\bin\Debug\Control Inventario.exe
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\bin\Debug\Control Inventario.pdb
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.Form1.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogo.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogoCrearArticulo.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogoEliminarArticulo.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCatalogoModificarArticulo.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloCompras.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloComprasBorrarProvedor.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloComprasCrearProvedor.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloEmpleados.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloFactura.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloLogin.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloReportes2.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.ModuloVentas.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.moduloVentasCompletarVenta.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.Properties.Resources.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionadorFecha.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticulo.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticuloCompra.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control_Inventario.seleccionarArticuloVenta.resources
+C:\Users\Novalys\Documents\Visual Studio 2008\Projects\Control Inventario\controldeventas\Control Inventario\obj\Debug\Control Inventario.csproj.GenerateResource.Cache
