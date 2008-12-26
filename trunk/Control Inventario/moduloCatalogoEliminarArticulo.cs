@@ -32,21 +32,13 @@ namespace Control_Inventario
 
         private void moduloCatalogoEliminarArticulo_Load(object sender, EventArgs e)
         {
-            sql.open();
-            List<string> listaArticulos = new List<string>();
-            listaArticulos = sql.llenarListaArticulos();
-
-            foreach (string nom in listaArticulos)
-            {
-                cArticulos.Items.Add(nom);
-            }
-            sql.close();
+            cajaBusqueda.Focus();
         }
 
         private void bCrearArticulo_Click(object sender, EventArgs e)
         {
             sql.open();
-            Articulo articulo = sql.getArticulo(cArticulos.SelectedItem.ToString());
+            Articulo articulo = sql.getArticulo(cajaArticulo.Text);
             sql.eliminarArticulo(articulo.id);
             MessageBox.Show("Articulo Eliminado con Exito!");
             sql.close();
@@ -57,6 +49,23 @@ namespace Control_Inventario
         {
             if (e.KeyValue == 27)
                 this.Close(); 
+        }
+
+        private void cajaBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                sql.open();
+                List<Articulo> articulos = new List<Articulo>();
+                articulos = sql.buscarArticulo(cajaBusqueda.Text);
+                seleccionarArticuloCompra compra = new seleccionarArticuloCompra(articulos);                             
+                sql.close();
+                compra.ShowDialog();
+                cajaArticulo.Text = compra.nombreArticuloFinal;
+                bCrearArticulo.Visible = true;
+                cajaBusqueda.Clear();
+                compra.Dispose();
+            }
         }
     }
 }
