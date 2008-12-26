@@ -38,18 +38,13 @@ namespace Control_Inventario
                 List<Articulo> articulos = new List<Articulo>();
                 articulos = sql.buscarArticulo(cajaBusqueda.Text);
                 seleccionarArticuloCompra compra = new seleccionarArticuloCompra(articulos);
-                compra.compras = this;
                 sql.close();
                 compra.ShowDialog();
+                cajaArticuloAComprar.Text = compra.nombreArticuloFinal;
+                cajaCantidad.Enabled = true;
+                cajaBusqueda.Clear();
+                cajaCantidad.Focus();
             }
-        }
-
-        public void setArticulo(string nombre)
-        {
-            cajaArticuloAComprar.Text = nombre;
-            cajaCantidad.Enabled = true;
-            cajaBusqueda.Clear();
-            cajaCantidad.Focus();
         }
 
         private void moduloCompras_Load(object sender, EventArgs e)

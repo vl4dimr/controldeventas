@@ -15,7 +15,7 @@ namespace Control_Inventario
     {
         List<Articulo> Articulos;
         mysql sql = new mysql();
-        public moduloCompras compras;
+        public string nombreArticuloFinal;
 
         public seleccionarArticuloCompra(List<Articulo> ListaArticulos)
         {
@@ -48,10 +48,9 @@ namespace Control_Inventario
                 sql.open();
                 string nombreArticulo = dataGrid.CurrentRow.Cells[0].Value.ToString();
                 Articulo articulo = sql.getArticulo(nombreArticulo);
-                compras.setArticulo(articulo.nombre);
+                nombreArticuloFinal = articulo.nombre;
                 sql.close();
                 this.Close();
-
             }
 
             if (e.KeyValue == 27)
