@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cajaFecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txCambiarImporte = new System.Windows.Forms.Label();
-            this.txCambiarFecha = new System.Windows.Forms.Label();
             this.ejecutarFactura = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +59,7 @@
             this.cajaImporte.Enabled = false;
             this.cajaImporte.Location = new System.Drawing.Point(12, 78);
             this.cajaImporte.Name = "cajaImporte";
-            this.cajaImporte.Size = new System.Drawing.Size(169, 20);
+            this.cajaImporte.Size = new System.Drawing.Size(220, 20);
             this.cajaImporte.TabIndex = 3;
             this.cajaImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -79,7 +77,7 @@
             this.cajaFecha.Enabled = false;
             this.cajaFecha.Location = new System.Drawing.Point(12, 135);
             this.cajaFecha.Name = "cajaFecha";
-            this.cajaFecha.Size = new System.Drawing.Size(169, 20);
+            this.cajaFecha.Size = new System.Drawing.Size(220, 20);
             this.cajaFecha.TabIndex = 5;
             this.cajaFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cajaFecha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cajaFecha_MouseClick);
@@ -92,28 +90,6 @@
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Fecha";
-            // 
-            // txCambiarImporte
-            // 
-            this.txCambiarImporte.AutoSize = true;
-            this.txCambiarImporte.ForeColor = System.Drawing.Color.Red;
-            this.txCambiarImporte.Location = new System.Drawing.Point(187, 81);
-            this.txCambiarImporte.Name = "txCambiarImporte";
-            this.txCambiarImporte.Size = new System.Drawing.Size(45, 13);
-            this.txCambiarImporte.TabIndex = 6;
-            this.txCambiarImporte.Text = "Cambiar";
-            this.txCambiarImporte.Click += new System.EventHandler(this.txCambiarImporte_Click);
-            // 
-            // txCambiarFecha
-            // 
-            this.txCambiarFecha.AutoSize = true;
-            this.txCambiarFecha.ForeColor = System.Drawing.Color.Red;
-            this.txCambiarFecha.Location = new System.Drawing.Point(187, 138);
-            this.txCambiarFecha.Name = "txCambiarFecha";
-            this.txCambiarFecha.Size = new System.Drawing.Size(45, 13);
-            this.txCambiarFecha.TabIndex = 7;
-            this.txCambiarFecha.Text = "Cambiar";
-            this.txCambiarFecha.Click += new System.EventHandler(this.txCambiarFecha_Click);
             // 
             // ejecutarFactura
             // 
@@ -131,8 +107,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(244, 213);
             this.Controls.Add(this.ejecutarFactura);
-            this.Controls.Add(this.txCambiarFecha);
-            this.Controls.Add(this.txCambiarImporte);
             this.Controls.Add(this.cajaFecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cajaImporte);
@@ -157,8 +131,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox cajaFecha;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txCambiarImporte;
-        private System.Windows.Forms.Label txCambiarFecha;
         private System.Windows.Forms.Button ejecutarFactura;
     }
 }

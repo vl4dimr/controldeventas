@@ -58,19 +58,9 @@ namespace Control_Inventario
 
                 if (cantidadVenta > articulo.existencia)
                 {
-                    string precaucion = MessageBox.Show("La cantidad solicitada excede la cantidad existente en el inventario.\rDeseas realizar la venta?", "Precaucion", MessageBoxButtons.YesNo, MessageBoxIcon.Question).ToString();
-                    if (precaucion == "Yes")
-                    {
-                        sql.agregarPreventa(nombreArticulo, cantidadVenta);
-                        ventas.actualizarTabla();
-                        sql.close();
-                        this.Close();
-                    }
-                    else
-                    {
-                        sql.close();
-                        this.Close();
-                    }
+                    MessageBox.Show("La cantidad solicitada excede la cantidad existente en el inventario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    sql.close();
+                    this.Close();
                 }
                 else
                 {

@@ -118,28 +118,43 @@ namespace Control_Inventario
             }
             else
             {
-                lbCambio.Text = "Cambio: $" + (float.Parse(cajaCantidadRecibida.Text) - precioPagar).ToString();
+                MessageBox.Show("Cambio: " + string.Format("{0:C}", (float.Parse(cajaCantidadRecibida.Text) - precioPagar)));
+                lbCambio.Visible = false;
+                botonCancelar.Visible = false;
+                botonFinalizar.Visible = false;
                 cantidadPagar.Visible = false;
                 lbCantidadRecibida.Visible = false;
                 cajaCantidadRecibida.Visible = false;
                 botonFinalizar.Enabled = false;
-                botonCancelar.Text = "Salir";
+                this.Text = "ESC Para Regresar....";
 
                 List<Articulo> articulosVendidos = new List<Articulo>();
                 sql.open();
                 articulosVendidos = sql.completarVenta();
                 sql.registrarGanancia(precioPagar);
+                sql.close();
+
+#if SISTEMA_FACTURAS_
+                string deseaFactura = MessageBox.Show("Deseas Facturar esta venta?", "Factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question).ToString();
+                if (deseaFactura == "Yes")
+                {
+                    moduloFactura factura = new moduloFactura();
+                    factura.importe = precioPagar;
+                    factura.actualizarCajas();
+                    factura.ShowDialog();
+                }
+#endif
 
                 foreach (Articulo articulo in articulosVendidos)
                 {
-                    cajaTicket.Text += articulo.cantidadVenta.ToString() + " " + articulo.nombre + " ( $" + articulo.precio.ToString() + " )" + Environment.NewLine;
+                    cajaTicket.Text += articulo.cantidadVenta.ToString() + " " + articulo.nombre + " ( " + string.Format("{0:C}", articulo.precio) + " )" + Environment.NewLine;
                 }
-                cajaTicket.Text += Environment.NewLine + "Total: $" + precioPagar.ToString() + Environment.NewLine;
-                cajaTicket.Text += "Pago con: $" + cajaCantidadRecibida.Text + Environment.NewLine;
-                cajaTicket.Text += "Cambio: $" + (float.Parse(cajaCantidadRecibida.Text) - precioPagar).ToString();
+                cajaTicket.Text += Environment.NewLine + "Total: " + string.Format("{0:C}", precioPagar) + Environment.NewLine;
+                cajaTicket.Text += "Pago con: " + string.Format("{0:C}", cajaCantidadRecibida.Text) + Environment.NewLine;
+                cajaTicket.Text += "Cambio: " + string.Format("{0:C}", (float.Parse(cajaCantidadRecibida.Text) - precioPagar));
                 cajaTicket.Text += Environment.NewLine + Environment.NewLine + "Muchas Gracias por su compra!!";
+                ticket.Visible = true;
                 botonCancelar.Focus();
-                sql.close();
             }
         }
     }
