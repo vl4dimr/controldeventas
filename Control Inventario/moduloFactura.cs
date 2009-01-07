@@ -46,22 +46,25 @@ namespace Control_Inventario
 
         private void ejecutarFactura_Click(object sender, EventArgs e)
         {
-            sql.open();
+            if (cajaNombre.Text != "")
+            {
+                sql.open();
 
-            string dia = "";
-            string mes = "";
-            string ano = "";
-            string[] preformato;
-            
-            preformato = cajaFecha.Text.Split('/');
-            dia = preformato[0];
-            mes = preformato[1];
-            ano = preformato[2];
-            string fechaFormato = ano + "-" + mes + "-" + dia;
+                string dia = "";
+                string mes = "";
+                string ano = "";
+                string[] preformato;
 
-            sql.crearFactura(cajaNombre.Text, double.Parse(cajaImporte.Text), fechaFormato);
-            sql.close();
-            this.Close();
+                preformato = cajaFecha.Text.Split('/');
+                dia = preformato[0];
+                mes = preformato[1];
+                ano = preformato[2];
+                string fechaFormato = ano + "-" + mes + "-" + dia;
+
+                sql.crearFactura(cajaNombre.Text, double.Parse(cajaImporte.Text), fechaFormato);
+                sql.close();
+                this.Close();
+            }
         }
 
         private void txCambiarImporte_Click(object sender, EventArgs e)

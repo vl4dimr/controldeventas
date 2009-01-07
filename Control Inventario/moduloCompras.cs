@@ -118,6 +118,8 @@ namespace Control_Inventario
         {
             moduloComprasBorrarProvedor borrarProvedor = new moduloComprasBorrarProvedor();
             borrarProvedor.ShowDialog();
+            borrarProvedor.Dispose();
+            actualizarCombo();
         }
     }
 }

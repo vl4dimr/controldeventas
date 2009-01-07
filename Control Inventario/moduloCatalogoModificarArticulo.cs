@@ -33,28 +33,10 @@ namespace Control_Inventario
 
         private void moduloCatalogoModificarArticulo_Load(object sender, EventArgs e)
         {
-            sql.open();
-            List<string> listaArticulos = new List<string>();
-            listaArticulos = sql.llenarListaArticulos();
-            foreach(string nom in listaArticulos)
-            {
-                cArticulos.Items.Add(nom);
-            }
-            cArticulos.Sorted = true;
-            sql.close();
+            cajaBusqueda.Focus();
         }
 
-        private void cArticulos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            sql.open();
-            Articulo articulo;
-            articulo = sql.getArticulo(cArticulos.SelectedItem.ToString());
-            tNombre.Text = articulo.nombre;
-            tPrecio.Text = articulo.precio.ToString();
-            tDescripcion.Text = articulo.descripcion;
-            ID = articulo.id;
-            sql.close();
-        }
+
 
         private void bCrearArticulo_Click(object sender, EventArgs e)
         {
@@ -62,7 +44,7 @@ namespace Control_Inventario
             {
                 sql.open();
                 sql.actualizarArticulo(tNombre.Text, float.Parse(tPrecio.Text), tDescripcion.Text, ID);
-                MessageBox.Show("Articulo modificado con exito!");
+                MessageBox.Show("Articulo modificado con exito!","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 sql.close();
                 this.Close();
             }
@@ -72,6 +54,32 @@ namespace Control_Inventario
         {
             if (e.KeyValue == 27)
                 this.Close();
+        }
+
+        private void cajaBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                sql.open();
+                List<Articulo> articulos = new List<Articulo>();
+                articulos = sql.buscarArticulo(cajaBusqueda.Text);
+                seleccionarArticuloCompra compra = new seleccionarArticuloCompra(articulos);
+                compra.ShowDialog();
+                Articulo art = sql.getArticulo(compra.nombreArticuloFinal);
+                sql.close();
+                tNombre.Text = art.nombre;
+                tPrecio.Text = art.precio.ToString();
+                tDescripcion.Text = art.descripcion;
+                ID = art.id;
+                bCrearArticulo.Visible = true;
+                cajaBusqueda.Clear();
+                compra.Dispose();
+
+                tNombre.Enabled = true;
+                tPrecio.Enabled = true;
+                tDescripcion.Enabled = true;
+                bCrearArticulo.Enabled = true; // Modificar Articulo
+            }
         }
     }
 }

@@ -25,20 +25,28 @@ namespace Control_Inventario
 
         private void seleccionarArticuloCompra_Load(object sender, EventArgs e)
         {
-            DataTable dataTable1 = new DataTable("Articulos");
-            dataTable1.Columns.Add("Nombre", typeof(string));
-            dataTable1.Columns.Add("Descripcion", typeof(string));
-
-            foreach (Articulo articulo in Articulos)
+            if (Articulos != null)
             {
-                DataRow dataRow = dataTable1.NewRow();
-                dataRow["Nombre"] = articulo.nombre;
-                dataRow["Descripcion"] = articulo.descripcion;
-                dataTable1.Rows.Add(dataRow);
-                dataTable1.AcceptChanges();
-            }
+                DataTable dataTable1 = new DataTable("Articulos");
+                dataTable1.Columns.Add("Nombre", typeof(string));
+                dataTable1.Columns.Add("Descripcion", typeof(string));
 
-            dataGrid.DataSource = dataTable1;
+                foreach (Articulo articulo in Articulos)
+                {
+                    DataRow dataRow = dataTable1.NewRow();
+                    dataRow["Nombre"] = articulo.nombre;
+                    dataRow["Descripcion"] = articulo.descripcion;
+                    dataTable1.Rows.Add(dataRow);
+                    dataTable1.AcceptChanges();
+                }
+
+                dataGrid.DataSource = dataTable1;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro este articulo!");
+                this.Close();
+            }
         }
 
         private void dataGrid_KeyDown(object sender, KeyEventArgs e)
