@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Articulo.cs" />
     <Compile Include="datosReporte.cs" />
+    <Compile Include="factura.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

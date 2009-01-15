@@ -703,6 +703,33 @@ namespace Control_Inventario
             }
         }
 
+        public List<factura> rep_facturas(string fecha1, string fecha2)
+        {
+            MySqlDataReader sqlRead = this.query("SELECT * FROM facturas WHERE fecha between '" + fecha1 + "' and '" + fecha2 + "' order by fecha DESC;");
+
+            if (sqlRead.HasRows)
+            {
+                List<factura> ListaDatos = new List<factura>();
+                while (sqlRead.Read())
+                {
+                    factura factura = new factura();
+                    factura.id = sqlRead.GetString(0);
+                    factura.cliente = sqlRead.GetString(1);
+                    factura.importe = sqlRead.GetString(2);
+                    factura.fecha = sqlRead.GetString(3);
+                    ListaDatos.Add(factura);
+                }
+
+                sqlRead.Close();
+                return ListaDatos;
+            }
+            else
+            {
+                sqlRead.Close();
+                return null;
+            }
+        }
+
         public double rep_GananciasPorFechas(string fecha1, string fecha2)
         {
             MySqlDataReader sqlRead = this.query("select sum(monto) from ganancias where fecha between '" + fecha1 + "' and '" + fecha2 + "'");

@@ -514,6 +514,53 @@ namespace Control_Inventario
             }
             #endregion
 
+            #region Reporte de Facturas
+            if (rFacturas.Checked)
+            {
+                cajaReporte.Text = "Tipo de Reporte: Facturas." + Environment.NewLine + Environment.NewLine;
+
+                if (fecha1 == "1900-01-01")
+                {
+                    cajaReporte.Text += "Reporte General (Todo el Tiempo)." + Environment.NewLine + Environment.NewLine;
+                }
+                else
+                {
+                    if (fecha1 != fecha2)
+                    {
+                        cajaReporte.Text += "Reporte entre las Fechas: " + fecha1 + " y " + fecha2 + "." + Environment.NewLine + Environment.NewLine;
+                    }
+                    else
+                    {
+                        cajaReporte.Text += "Reporte de la fecha: " + fecha1 + "." + Environment.NewLine + Environment.NewLine;
+                    }
+                }
+
+                cajaReporte.Text += "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
+
+                sql.open();
+                List<factura> datos = sql.rep_facturas(fecha1,fecha2);
+
+                if (datos != null)
+                {
+
+                    foreach (factura factura in datos)
+                    {
+                        string [] fechaEstilo = factura.fecha.Split(' ');
+                        factura.fecha = fechaEstilo[0];
+
+                        cajaReporte.Text += "Cliente: " + factura.cliente + " [ " + factura.fecha + " ] " + Environment.NewLine + "Importe: " + string.Format("{0:C}", float.Parse(factura.importe)) + Environment.NewLine + Environment.NewLine;
+                    }
+
+                    cajaReporte.Text += Environment.NewLine + "----------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
+                }
+                else
+                {
+                    cajaReporte.Text = "No existen datos para este reporte.";
+                }
+                sql.close();
+            }
+            #endregion
+
             reiniciarReporte();
             copyClipBoard.Focus();
             ejecutarReporte.Visible = false;
@@ -641,6 +688,11 @@ namespace Control_Inventario
                     sw.Write(cajaReporte.Text);
                 }
             } 
+        }
+
+        private void rFacturas_CheckedChanged(object sender, EventArgs e)
+        {
+            ejecutarReporte.Visible = true;
         }
     }
 }
