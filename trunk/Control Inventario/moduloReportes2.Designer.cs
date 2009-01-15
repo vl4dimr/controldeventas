@@ -46,13 +46,14 @@
             this.comboProvedor = new System.Windows.Forms.ComboBox();
             this.rcomprasProvedor = new System.Windows.Forms.RadioButton();
             this.rdevoluciones = new System.Windows.Forms.RadioButton();
-            this.ejecutarReporte = new System.Windows.Forms.Button();
             this.rventas = new System.Windows.Forms.RadioButton();
+            this.ejecutarReporte = new System.Windows.Forms.Button();
             this.grupoCajaReporte = new System.Windows.Forms.GroupBox();
+            this.cajaReporte = new System.Windows.Forms.TextBox();
             this.copyClipBoard = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button1 = new System.Windows.Forms.Button();
-            this.cajaReporte = new System.Windows.Forms.TextBox();
+            this.rFacturas = new System.Windows.Forms.RadioButton();
             this.tipoReporte.SuspendLayout();
             this.group1fecha.SuspendLayout();
             this.group2fechas.SuspendLayout();
@@ -172,6 +173,7 @@
             // 
             // grupoClaseReporte
             // 
+            this.grupoClaseReporte.Controls.Add(this.rFacturas);
             this.grupoClaseReporte.Controls.Add(this.comboUsuarios);
             this.grupoClaseReporte.Controls.Add(this.rasistencia);
             this.grupoClaseReporte.Controls.Add(this.rArticulos);
@@ -183,7 +185,7 @@
             this.grupoClaseReporte.Enabled = false;
             this.grupoClaseReporte.Location = new System.Drawing.Point(12, 198);
             this.grupoClaseReporte.Name = "grupoClaseReporte";
-            this.grupoClaseReporte.Size = new System.Drawing.Size(250, 192);
+            this.grupoClaseReporte.Size = new System.Drawing.Size(250, 216);
             this.grupoClaseReporte.TabIndex = 3;
             this.grupoClaseReporte.TabStop = false;
             this.grupoClaseReporte.Text = "Clase de Reporte";
@@ -192,7 +194,7 @@
             // 
             this.comboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboUsuarios.FormattingEnabled = true;
-            this.comboUsuarios.Location = new System.Drawing.Point(123, 163);
+            this.comboUsuarios.Location = new System.Drawing.Point(123, 181);
             this.comboUsuarios.Name = "comboUsuarios";
             this.comboUsuarios.Size = new System.Drawing.Size(121, 21);
             this.comboUsuarios.TabIndex = 9;
@@ -201,7 +203,7 @@
             // rasistencia
             // 
             this.rasistencia.AutoSize = true;
-            this.rasistencia.Location = new System.Drawing.Point(6, 164);
+            this.rasistencia.Location = new System.Drawing.Point(6, 182);
             this.rasistencia.Name = "rasistencia";
             this.rasistencia.Size = new System.Drawing.Size(124, 17);
             this.rasistencia.TabIndex = 8;
@@ -238,7 +240,7 @@
             // 
             this.comboProvedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProvedor.FormattingEnabled = true;
-            this.comboProvedor.Location = new System.Drawing.Point(123, 134);
+            this.comboProvedor.Location = new System.Drawing.Point(123, 152);
             this.comboProvedor.Name = "comboProvedor";
             this.comboProvedor.Size = new System.Drawing.Size(121, 21);
             this.comboProvedor.TabIndex = 5;
@@ -248,7 +250,7 @@
             // rcomprasProvedor
             // 
             this.rcomprasProvedor.AutoSize = true;
-            this.rcomprasProvedor.Location = new System.Drawing.Point(6, 135);
+            this.rcomprasProvedor.Location = new System.Drawing.Point(6, 153);
             this.rcomprasProvedor.Name = "rcomprasProvedor";
             this.rcomprasProvedor.Size = new System.Drawing.Size(124, 17);
             this.rcomprasProvedor.TabIndex = 4;
@@ -269,17 +271,6 @@
             this.rdevoluciones.UseVisualStyleBackColor = true;
             this.rdevoluciones.CheckedChanged += new System.EventHandler(this.rdevoluciones_CheckedChanged);
             // 
-            // ejecutarReporte
-            // 
-            this.ejecutarReporte.Location = new System.Drawing.Point(283, 333);
-            this.ejecutarReporte.Name = "ejecutarReporte";
-            this.ejecutarReporte.Size = new System.Drawing.Size(138, 52);
-            this.ejecutarReporte.TabIndex = 4;
-            this.ejecutarReporte.Text = "Correr Reporte";
-            this.ejecutarReporte.UseVisualStyleBackColor = true;
-            this.ejecutarReporte.Visible = false;
-            this.ejecutarReporte.Click += new System.EventHandler(this.ejecutarReporte_Click);
-            // 
             // rventas
             // 
             this.rventas.AutoSize = true;
@@ -292,20 +283,43 @@
             this.rventas.UseVisualStyleBackColor = true;
             this.rventas.CheckedChanged += new System.EventHandler(this.rventas_CheckedChanged);
             // 
+            // ejecutarReporte
+            // 
+            this.ejecutarReporte.Location = new System.Drawing.Point(283, 362);
+            this.ejecutarReporte.Name = "ejecutarReporte";
+            this.ejecutarReporte.Size = new System.Drawing.Size(138, 52);
+            this.ejecutarReporte.TabIndex = 4;
+            this.ejecutarReporte.Text = "Correr Reporte";
+            this.ejecutarReporte.UseVisualStyleBackColor = true;
+            this.ejecutarReporte.Visible = false;
+            this.ejecutarReporte.Click += new System.EventHandler(this.ejecutarReporte_Click);
+            // 
             // grupoCajaReporte
             // 
             this.grupoCajaReporte.Controls.Add(this.cajaReporte);
             this.grupoCajaReporte.Location = new System.Drawing.Point(283, 12);
             this.grupoCajaReporte.Name = "grupoCajaReporte";
-            this.grupoCajaReporte.Size = new System.Drawing.Size(357, 315);
+            this.grupoCajaReporte.Size = new System.Drawing.Size(357, 344);
             this.grupoCajaReporte.TabIndex = 5;
             this.grupoCajaReporte.TabStop = false;
             this.grupoCajaReporte.Text = "Resultados del Reporte";
             this.grupoCajaReporte.Visible = false;
             // 
+            // cajaReporte
+            // 
+            this.cajaReporte.BackColor = System.Drawing.SystemColors.Control;
+            this.cajaReporte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cajaReporte.Location = new System.Drawing.Point(6, 19);
+            this.cajaReporte.Multiline = true;
+            this.cajaReporte.Name = "cajaReporte";
+            this.cajaReporte.ReadOnly = true;
+            this.cajaReporte.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.cajaReporte.Size = new System.Drawing.Size(345, 314);
+            this.cajaReporte.TabIndex = 0;
+            // 
             // copyClipBoard
             // 
-            this.copyClipBoard.Location = new System.Drawing.Point(427, 333);
+            this.copyClipBoard.Location = new System.Drawing.Point(427, 362);
             this.copyClipBoard.Name = "copyClipBoard";
             this.copyClipBoard.Size = new System.Drawing.Size(213, 23);
             this.copyClipBoard.TabIndex = 6;
@@ -320,7 +334,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(427, 362);
+            this.button1.Location = new System.Drawing.Point(427, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(213, 23);
             this.button1.TabIndex = 7;
@@ -329,23 +343,23 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cajaReporte
+            // rFacturas
             // 
-            this.cajaReporte.BackColor = System.Drawing.SystemColors.Control;
-            this.cajaReporte.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cajaReporte.Location = new System.Drawing.Point(6, 19);
-            this.cajaReporte.Multiline = true;
-            this.cajaReporte.Name = "cajaReporte";
-            this.cajaReporte.ReadOnly = true;
-            this.cajaReporte.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cajaReporte.Size = new System.Drawing.Size(345, 290);
-            this.cajaReporte.TabIndex = 0;
+            this.rFacturas.AutoSize = true;
+            this.rFacturas.Location = new System.Drawing.Point(6, 130);
+            this.rFacturas.Name = "rFacturas";
+            this.rFacturas.Size = new System.Drawing.Size(66, 17);
+            this.rFacturas.TabIndex = 10;
+            this.rFacturas.TabStop = true;
+            this.rFacturas.Text = "Facturas";
+            this.rFacturas.UseVisualStyleBackColor = true;
+            this.rFacturas.CheckedChanged += new System.EventHandler(this.rFacturas_CheckedChanged);
             // 
             // moduloReportes2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 397);
+            this.ClientSize = new System.Drawing.Size(654, 426);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.copyClipBoard);
             this.Controls.Add(this.grupoCajaReporte);
@@ -400,5 +414,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox cajaReporte;
+        private System.Windows.Forms.RadioButton rFacturas;
     }
 }

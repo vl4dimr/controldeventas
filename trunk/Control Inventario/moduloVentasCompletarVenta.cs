@@ -28,6 +28,9 @@ namespace Control_Inventario
         {
             cantidadPagar.Text = string.Format("{0:C}",precioPagar);
             cajaCantidadRecibida.Focus();
+            ticketEmpresaInfo.Text = "Empresa"; // Aqui va la informacion de la empresa.
+            ticketEmpresaInfo.Text += Environment.NewLine + "RFC"; // Aqui va la informacion de la empresa.
+            ticketEmpresaInfo.Text += Environment.NewLine + "Direccion"; // Aqui va la informacion de la empresa.
         }
 
         private void cajaCantidadRecibida_KeyDown(object sender, KeyEventArgs e)
@@ -69,15 +72,15 @@ namespace Control_Inventario
                         factura.ShowDialog();
                     }
 #endif
-
+                    
                     foreach (Articulo articulo in articulosVendidos)
                     {
-                        cajaTicket.Text += articulo.cantidadVenta.ToString() + " " + articulo.nombre + " ( " + string.Format("{0:C}",articulo.precio) + " )" + Environment.NewLine;
+                        ticketTexto.Text += articulo.cantidadVenta.ToString() + " " + articulo.nombre + " ( " + string.Format("{0:C}",articulo.precio) + " )" + Environment.NewLine;
                     }
-                    cajaTicket.Text += Environment.NewLine + "Total: " + string.Format("{0:C}",precioPagar) + Environment.NewLine;
-                    cajaTicket.Text += "Pago con: " + string.Format("{0:C}",cajaCantidadRecibida.Text) + Environment.NewLine;
-                    cajaTicket.Text += "Cambio: " + string.Format("{0:C}",(float.Parse(cajaCantidadRecibida.Text) - precioPagar));
-                    cajaTicket.Text += Environment.NewLine + Environment.NewLine + "Muchas Gracias por su compra!!";
+                    ticketTexto.Text += Environment.NewLine + "Total: " + string.Format("{0:C}",precioPagar) + Environment.NewLine;
+                    ticketTexto.Text += "Pago con: " + string.Format("{0:C}",cajaCantidadRecibida.Text) + Environment.NewLine;
+                    ticketTexto.Text += "Cambio: " + string.Format("{0:C}",(float.Parse(cajaCantidadRecibida.Text) - precioPagar));
+                    ticketTexto.Text += Environment.NewLine + Environment.NewLine + "Muchas Gracias por su compra!!";
                     ticket.Visible = true;
                     botonCancelar.Focus();
                 }
@@ -147,12 +150,12 @@ namespace Control_Inventario
 
                 foreach (Articulo articulo in articulosVendidos)
                 {
-                    cajaTicket.Text += articulo.cantidadVenta.ToString() + " " + articulo.nombre + " ( " + string.Format("{0:C}", articulo.precio) + " )" + Environment.NewLine;
+                    ticketTexto.Text += articulo.cantidadVenta.ToString() + " " + articulo.nombre + " ( " + string.Format("{0:C}", articulo.precio) + " )" + Environment.NewLine;
                 }
-                cajaTicket.Text += Environment.NewLine + "Total: " + string.Format("{0:C}", precioPagar) + Environment.NewLine;
-                cajaTicket.Text += "Pago con: " + string.Format("{0:C}", cajaCantidadRecibida.Text) + Environment.NewLine;
-                cajaTicket.Text += "Cambio: " + string.Format("{0:C}", (float.Parse(cajaCantidadRecibida.Text) - precioPagar));
-                cajaTicket.Text += Environment.NewLine + Environment.NewLine + "Muchas Gracias por su compra!!";
+                ticketTexto.Text += Environment.NewLine + "Total: " + string.Format("{0:C}", precioPagar) + Environment.NewLine;
+                ticketTexto.Text += "Pago con: " + string.Format("{0:C}", cajaCantidadRecibida.Text) + Environment.NewLine;
+                ticketTexto.Text += "Cambio: " + string.Format("{0:C}", (float.Parse(cajaCantidadRecibida.Text) - precioPagar));
+                ticketTexto.Text += Environment.NewLine + Environment.NewLine + "Muchas Gracias por su compra!!";
                 ticket.Visible = true;
                 botonCancelar.Focus();
             }
